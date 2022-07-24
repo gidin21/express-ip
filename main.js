@@ -29,12 +29,12 @@ const app = express()
 const port = 8080
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Ola Mundo!')
 })
 
 app.get('/ip', (req, res) => {
     const ip = findIP();
-    res.send(ip);
+    res.send('Version2 : ' + ip);
 })
 
 app.listen(port, () => {
