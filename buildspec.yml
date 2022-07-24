@@ -11,8 +11,11 @@ phases:
       # - REPOSITORY_URI=077708451457.dkr.ecr.ap-south-1.amazonaws.com/node-app
       # - REPOSITORY_URI=117807757432.dkr.ecr.us-east-1.amazonaws.com/gidin21/express-ip-amd64:latest
       - REPOSITORY_URI=117807757432.dkr.ecr.us-east-1.amazonaws.com/gidin21/express-ip-amd64
+      - echo Done Logging in
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - echo Done COMMIT_HASH
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - echo Done pre_build
   build:
     commands:
       - echo Build started on `date`
