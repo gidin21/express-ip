@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 app.get('/ip', (req, res) => {
     const ip = findIP();
-    res.send('Version2 : ' + ip);
+    res.send('Version2 : ' + JSON.stringify(ip));
 })
 
 app.listen(port, () => {
